@@ -8,6 +8,7 @@ import SideBar from './components/SideBar';
 import Footer from './components/Footer';
 import getAllCommits from '@/actions/github/get-repo-commits';
 import type { Metadata } from 'next';
+import NextTopLoader from 'nextjs-toploader'
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -65,6 +66,7 @@ export default async function AppLayout({
   //console.log(typeof build, "build");
   return (
     <div className="flex h-screen overflow-hidden">
+      <NextTopLoader color="#e41f07" height={8} />
       <SideBar build={build} />
       <div className="flex h-full w-full flex-col overflow-hidden">
         <Header
