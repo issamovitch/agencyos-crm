@@ -5,7 +5,7 @@ import { BasicView } from './components/BasicView';
 
 import DocumentsView from '../../components/DocumentsView';
 import ContactsView from '../../components/ContactsView';
-import AccountsView from '../../components/AccountsView';
+import AccountsView from '../../accounts/components/AccountsView';
 
 import { getAllCrmData } from '@/actions/crm/get-crm-data';
 import { getOpportunity } from '@/actions/crm/get-opportunity';

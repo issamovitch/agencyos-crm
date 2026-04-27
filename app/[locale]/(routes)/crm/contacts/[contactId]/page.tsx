@@ -8,7 +8,7 @@ import { getAllCrmData } from '@/actions/crm/get-crm-data';
 import { getDocumentsByContactId } from '@/actions/documents/get-documents-by-contactId';
 import { getAccountsByContactId } from '@/actions/crm/get-accounts-by-contactId';
 
-import AccountsView from '../../components/AccountsView';
+import AccountsView from '../../accounts/components/AccountsView';
 import OpportunitiesView from '../../components/OpportunitiesView';
 import DocumentsView from '../../components/DocumentsView';
 

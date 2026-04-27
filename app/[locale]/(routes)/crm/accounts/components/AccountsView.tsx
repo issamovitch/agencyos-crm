@@ -8,20 +8,20 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+} from 'components/ui/card';
+import { Separator } from 'components/ui/separator';
 
-import { columns } from '../accounts/table-components/columns';
-import { NewAccountForm } from '../accounts/components/NewAccountForm';
-import { AccountDataTable } from '../accounts/table-components/data-table';
+import { columns } from '../table-components/columns';
+import { NewAccountForm } from './NewAccountForm';
+import { AccountDataTable } from '../table-components/data-table';
 import { useRouter } from 'next/navigation';
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from '@/components/ui/sheet';
-import { Button } from '@/components/ui/button';
+} from 'components/ui/sheet';
+import { Button } from 'components/ui/button';
 
 const AccountsView = ({ data, crmData }: any) => {
   const router = useRouter();
@@ -63,8 +63,9 @@ const AccountsView = ({ data, crmData }: any) => {
               <SheetContent className="min-w-[1000px] space-y-2">
                 <SheetHeader>
                   <SheetTitle>Create new Account</SheetTitle>
+                  <hr/>
                 </SheetHeader>
-                <div className="h-full overflow-y-auto">
+                <div className="h-full overflow-y-auto pt-2 relative">
                   <NewAccountForm
                     industries={industries}
                     users={users}

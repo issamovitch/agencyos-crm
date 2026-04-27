@@ -4,7 +4,7 @@ import { getAllCrmData } from '@/actions/crm/get-crm-data';
 import { getLeads } from '@/actions/crm/get-leads';
 import { getOpportunitiesFull } from '@/actions/crm/get-opportunities-with-includes';
 import React from 'react';
-import AccountsView from './AccountsView';
+import AccountsView from '../accounts/components/AccountsView';
 import ContactsView from './ContactsView';
 import OpportunitiesView from './OpportunitiesView';
 import LeadsView from './LeadsView';
