@@ -47,6 +47,9 @@ export const metadata: Metadata = {
 };
 
 const DashboardPage = async () => {
+
+  //await new Promise((resolve) => setTimeout(resolve, 10000));
+
   const session = await getServerSession(authOptions);
 
   if (!session) return null;

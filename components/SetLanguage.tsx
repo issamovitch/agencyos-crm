@@ -1,7 +1,6 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Check, ChevronsUpDown } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
@@ -9,9 +8,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
   Command,
-  CommandEmpty,
   CommandGroup,
-  CommandInput,
   CommandItem,
 } from '@/components/ui/command';
 import {
@@ -34,12 +31,12 @@ import { useState } from 'react';
 import LoadingModal from './modals/loading-modal';
 
 const languages = [
-  { label: 'English', value: 'en' },
-  { label: 'Czech', value: 'cz' },
-  { label: 'German', value: 'de' },
-  { label: 'Ukrainian', value: 'uk' },
-  { label: 'Korean', value: 'ko' },
-  { label: 'Turkish', value: 'tr' },
+  { label: 'English', value: 'en', code: 'us' },
+  { label: 'Czech', value: 'cz', code: 'cz' },
+  { label: 'German', value: 'de', code: 'de' },
+  { label: 'Ukrainian', value: 'uk', code: 'ua' },
+  { label: 'Korean', value: 'ko', code: 'kr' },
+  { label: 'Turkish', value: 'tr', code: 'tr' },
 ] as const;
 
 const FormSchema = z.object({
@@ -50,13 +47,17 @@ const FormSchema = z.object({
 
 type Props = {
   userId: string;
+  currentLang?: string;
 };
 
-export function SetLanguage({ userId }: Props) {
+export function SetLanguage({ userId, currentLang }: Props) {
   const router = useRouter();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
+    defaultValues: {
+      language: currentLang || '',
+    },
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -69,6 +70,9 @@ export function SetLanguage({ userId }: Props) {
         title: 'Success',
         description: 'You change user language to: ' + data.language,
       });
+      router.refresh();
+      // Force reload to apply language changes globally if needed
+      window.location.reload();
     } catch (e) {
       console.log(e, 'error');
       toast({
@@ -77,14 +81,13 @@ export function SetLanguage({ userId }: Props) {
         variant: 'destructive',
       });
     } finally {
-      router.refresh();
       setIsLoading(false);
     }
   }
 
   if (isLoading) {
     return (
-      <LoadingModal isOpen={isLoading} description="Changing SaasHQ language" />
+      <LoadingModal isOpen={isLoading} description="Changing AgencyOS language" />
     );
   }
 
@@ -106,25 +109,42 @@ export function SetLanguage({ userId }: Props) {
                       variant="outline"
                       role="combobox"
                       className={cn(
-                        'w-[200px] justify-between',
+                        'w-[70px] justify-start gap-2 px-3',
                         !field.value && 'text-muted-foreground'
                       )}
                     >
-                      {field.value
-                        ? languages.find(
-                            (language) => language.value === field.value
-                          )?.label
-                        : 'Select language'}
-                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      {field.value ? (
+                        <div className="flex items-center gap-2">
+                          <img
+                            src={`https://flagcdn.com/w20/${languages.find((l) => l.value === field.value)?.code}.png`}
+                            width="20"
+                            alt=""
+                            className="rounded-xs"
+                          />
+                          <span className="uppercase">{field.value}</span>
+                        </div>
+                      ) : (
+                        currentLang ? (
+                           <div className="flex items-center gap-2">
+                            <img
+                              src={`https://flagcdn.com/w20/${languages.find((l) => l.value === currentLang)?.code}.png`}
+                              width="20"
+                              alt=""
+                              className="rounded-xs"
+                            />
+                            <span className="uppercase">{currentLang}</span>
+                          </div>
+                        ) : 'Select'
+                      )}
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                <PopoverContent className="w-[200px] p-0">
+                <PopoverContent className="w-[70px] p-0">
                   <Command>
-                    <CommandInput placeholder="Search language ..." />
-                    <CommandEmpty>No language found.</CommandEmpty>
                     <CommandGroup>
-                      {languages.map((language) => (
+                      {languages
+                        .filter((language) => language.value !== (field.value || currentLang))
+                        .map((language) => (
                         <CommandItem
                           value={language.value}
                           key={language.value}
@@ -132,16 +152,17 @@ export function SetLanguage({ userId }: Props) {
                             form.setValue('language', value);
                             onSubmit(form.getValues());
                           }}
+                          className="flex items-center justify-between"
                         >
-                          <Check
-                            className={cn(
-                              'mr-2 h-4 w-4',
-                              language.value === field.value
-                                ? 'opacity-100'
-                                : 'opacity-0'
-                            )}
-                          />
-                          {language.label}
+                          <div className="flex items-center gap-2">
+                            <img
+                              src={`https://flagcdn.com/w20/${language.code}.png`}
+                              width="20"
+                              alt=""
+                              className="rounded-xs"
+                            />
+                            <span className="uppercase">{language.value}</span>
+                          </div>
                         </CommandItem>
                       ))}
                     </CommandGroup>

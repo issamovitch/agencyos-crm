@@ -61,7 +61,7 @@ export default async function AppLayout({
   //console.log(typeof build, "build");
   return (
     <div className="flex h-screen overflow-hidden">
-      <NextTopLoader color="#e41f07" height={8} />
+      <NextTopLoader color="#e41f07" height={4} />
       <SideBar />
       <div id="wrapper-container" className="flex h-full w-full flex-col overflow-hidden">
         <Header

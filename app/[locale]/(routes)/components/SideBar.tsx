@@ -1,28 +1,22 @@
-import { getModules } from '@/actions/get-modules';
-
-import ModuleMenu from './ModuleMenu';
+// app/components/Sidebar.tsx
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { getDictionary } from '@/dictionaries';
-import type { FC } from 'react';
+import { getModules } from '@/actions/get-modules';
+import SidebarClient from './SidebarClient';
 
-const SideBar = async () => {
+const Sidebar = async () => {
   const session = await getServerSession(authOptions);
-
   if (!session) return null;
 
-  const modules = await getModules();
+  const [modules, dict] = await Promise.all([
+    getModules(),
+    getDictionary(session.user.userLanguage),
+  ]);
 
-  if (!modules) return null;
+  if (!modules || !dict) return null;
 
-  //Get user language
-  const lang = session.user.userLanguage;
-
-  //Fetch translations from dictionary
-  const dict = await getDictionary(lang);
-
-  if (!dict) return null;
-
-  return <ModuleMenu modules={modules} dict={dict} />;
+  return <SidebarClient modules={modules} dict={dict} />;
 };
-export default SideBar;
+
+export default Sidebar;

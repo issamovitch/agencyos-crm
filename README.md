@@ -1,5 +1,5 @@
 <a href="https://demo.saashq.org/">
-  <h1 align="center">SaasHQ</h1>
+  <h1 align="center">AgencyOS</h1>
 </a>
 
 <p align="center">
@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-SaasHQ is a CRM / ERP starter built on top of Next.JS 14 using TypeScript, the great UI library shadCN and Prisma, Postgresql+Tembo as the backend infrastructure. Upload things as an S3 blob for document storage. SaasHQ is based on the awesome NextCRM project by Pavel Dovhomilja. The Workflow engne is inspired by 
+AgencyOS is a CRM / ERP starter built on top of Next.JS 14 using TypeScript, the great UI library shadCN and Prisma, Postgresql+Tembo as the backend infrastructure. Upload things as an S3 blob for document storage. AgencyOS is based on the awesome NextCRM project by Pavel Dovhomilja. The Workflow engne is inspired by 
 the Workflow-Engine project by Nisarg Bhatt.
 </p>
 
@@ -73,7 +73,7 @@ the Workflow-Engine project by Nisarg Bhatt.
 
 1. More AI powered - daily summary of tasks and project (OpenAI integration) - in progress
 2. Email campaigns management - integration with MailChimp and Listmonk - in planning
-3. ~~Docker version - in planning (There will be complete bundle to run SaasHQ on-premise)~~
+3. ~~Docker version - in planning (There will be complete bundle to run AgencyOS on-premise)~~
 4. Testing - Jest + Cypress (if anyone want to help I will be very happy) - in planning
 5. Fix all Types issue (no more "any") - complete (thanks to Nisarg Bhatt)
 6. i18n - localization - in progress (if anyone want to help I will be very happy)
@@ -88,7 +88,7 @@ We use [resend.com](https://resend.com) + [react.email](https://react.email) as 
 
 ## Reports
 
-We use Tremor charts as a tool for creating charts in SaasHQ
+We use Tremor charts as a tool for creating charts in AgencyOS
 
 ![hero](/public/reports.png)
 

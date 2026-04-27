@@ -210,7 +210,7 @@ export function MyAccountSettingsForm({ initialData }: UpdateAccountFormProps) {
                       <FormControl>
                         <Input
                           disabled={isLoading}
-                          placeholder="SaasHQ Inc."
+                          placeholder="AgencyOS Inc."
                           {...field}
                         />
                       </FormControl>

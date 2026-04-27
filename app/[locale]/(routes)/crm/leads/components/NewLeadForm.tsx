@@ -148,7 +148,7 @@ export function NewLeadForm({ users, accounts }: NewTaskFormProps) {
                   <FormControl>
                     <Input
                       disabled={isLoading}
-                      placeholder="SaasHQ Inc."
+                      placeholder="AgencyOS Inc."
                       {...field}
                     />
                   </FormControl>
@@ -213,7 +213,7 @@ export function NewLeadForm({ users, accounts }: NewTaskFormProps) {
                   <FormControl>
                     <Textarea
                       disabled={isLoading}
-                      placeholder="New SaasHQ functionality"
+                      placeholder="New AgencyOS functionality"
                       {...field}
                     />
                   </FormControl>

@@ -1,7 +1,7 @@
 {
   "RootLayout": {
-    "title": "SaasHQ",
-    "description": "SaasHQ, NextJS üzerine kurulu açık kaynaklı bir CRM'dir."
+    "title": "AgencyOS",
+    "description": "AgencyOS, NextJS üzerine kurulu açık kaynaklı bir CRM'dir."
   },
   "ModuleMenu": {
     "dashboard": "Kontrol Paneli",
@@ -24,7 +24,7 @@
   "DashboardPage": {
     "containerTitle": "Kontrol Paneli",
     "totalRevenue": "Toplam Gelir",
-    "containerDescription": "SaasHQ'ya hoş geldiniz, burada işinizle ilgili tüm önemli bilgileri görebilirsiniz.",
+    "containerDescription": "AgencyOS'ya hoş geldiniz, burada işinizle ilgili tüm önemli bilgileri görebilirsiniz.",
     "expectedRevenue": "Beklenen Gelir",
     "activeUsers": "Aktif Kullanıcılar",
     "accounts": "Şirketler",

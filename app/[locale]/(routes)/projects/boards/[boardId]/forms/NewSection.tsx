@@ -102,7 +102,7 @@ const NewSectionForm = ({ boardId, onClose }: NewSectionFormProps) => {
         </div>
         <div className="flex w-full justify-end space-x-2 pt-2">
           <DialogClose asChild>
-            <Button variant={'destructive'}>Cancel</Button>
+            <Button variant={'gray'}>Cancel</Button>
           </DialogClose>
           <Button type="submit" disabled={isLoading}>
             {isLoading ? (

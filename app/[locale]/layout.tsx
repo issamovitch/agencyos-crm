@@ -79,20 +79,20 @@ export default async function RootLayout({
         />
         <meta property="og:url" content="https://www.saashq.org" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="SaasHQ" />
+        <meta property="og:title" content="AgencyOS" />
         <meta
           property="og:description"
-          content="SaasHQ is an open source CRM/ERP starter built on top of NextJS. Technology stack: NextJS with Typescrtipt, Postgresql, TailwindCSS, React, Prisma, shadCN, resend.com, react.email and more."
+          content="AgencyOS is an open source CRM/ERP starter built on top of NextJS. Technology stack: NextJS with Typescrtipt, Postgresql, TailwindCSS, React, Prisma, shadCN, resend.com, react.email and more."
         />
         <meta property="og:image" content="https://saashq.org/api/og" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="saashq.org" />
         <meta property="twitter:url" content="https://www.saashq.org" />
-        <meta name="twitter:title" content="SaasHQ" />
+        <meta name="twitter:title" content="AgencyOS" />
         <meta
           name="twitter:description"
-          content="SaasHQ is an open source CRM/ERP starter built on top of NextJS. Technology stack: NextJS with Typescrtipt, Postgresql, TailwindCSS, React, Prisma, shadCN, resend.com, react.email and more."
+          content="AgencyOS is an open source CRM/ERP starter built on top of NextJS. Technology stack: NextJS with Typescrtipt, Postgresql, TailwindCSS, React, Prisma, shadCN, resend.com, react.email and more."
         />
         <meta name="twitter:image" content="https://saashq.org/api/og" />
       </head>

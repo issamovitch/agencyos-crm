@@ -1415,7 +1415,7 @@ COPY public."Training" (id, "employeeID", type, date, "time", "createdAt", "upda
 --
 
 COPY public."Users" (id, account_name, avatar, email, is_account_admin, is_admin, created_on, "lastLoginAt", name, password, username, "userStatus", "userLanguage", "watching_boardsIDs", "watching_accountsIDs", role) FROM stdin;
-clr6yh2cz0000lzn8sj0qw4fu			saashqdev@gmail.com	f	t	2024-01-09	2024-01-30	SaasHQ	$2a$12$gfJmtKXHv4.XVYad8X67.ur2wonnaqJawI5lkARIQJu.Sj8Y4SeWy	saashq	ACTIVE	en	\N	\N	guest
+clr6yh2cz0000lzn8sj0qw4fu			saashqdev@gmail.com	f	t	2024-01-09	2024-01-30	AgencyOS	$2a$12$gfJmtKXHv4.XVYad8X67.ur2wonnaqJawI5lkARIQJu.Sj8Y4SeWy	saashq	ACTIVE	en	\N	\N	guest
 \.
 
 

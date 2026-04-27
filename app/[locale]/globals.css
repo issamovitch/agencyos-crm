@@ -128,7 +128,6 @@ html.light #wrapper-container {
 
 html.light #wrapper-header {
    background-color: #ffffff !important;
-  box-shadow: 4px 0 6px -1px rgb(0 0 0 / 0.1), 2px 0 4px -2px rgb(0 0 0 / 0.1);
 }
 
 #wrapper-sidebar {
@@ -136,6 +135,32 @@ html.light #wrapper-header {
   z-index: 10;
 }
 
-#sidebar-logo {
-  max-width: inherit !important;
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: white;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+}
+
+#avatar-dropdown a {
+  cursor: pointer;
+}
+
+#avatar-dropdown a:hover {
+  background-color: #f1f5f9 !important;
 }

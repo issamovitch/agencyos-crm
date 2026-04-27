@@ -179,7 +179,7 @@ export function UpdateAccountForm({
                   <FormControl>
                     <Input
                       disabled={isLoading}
-                      placeholder="SaasHQ Inc."
+                      placeholder="AgencyOS Inc."
                       {...field}
                     />
                   </FormControl>

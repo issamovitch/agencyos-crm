@@ -1,7 +1,7 @@
 {
   "RootLayout": {
-    "title": "SaasHQ",
-    "description": "SaasHQ ist ein Open-Source-CRM, das auf NextJS aufbaut."
+    "title": "AgencyOS",
+    "description": "AgencyOS ist ein Open-Source-CRM, das auf NextJS aufbaut."
   },
   "ModuleMenu": {
     "dashboard": "Armaturenbrett",
@@ -24,7 +24,7 @@
   "DashboardPage": {
     "containerTitle": "Armaturenbrett",
     "totalRevenue": "Gesamtumsatz",
-    "containerDescription": "Willkommen bei SaasHQ, hier können Sie alle wichtigen Informationen über Ihr Unternehmen sehen.",
+    "containerDescription": "Willkommen bei AgencyOS, hier können Sie alle wichtigen Informationen über Ihr Unternehmen sehen.",
     "expectedRevenue": "Erwarteter Umsatz",
     "activeUsers": "Aktive Benutzer",
     "accounts": "Unternehmen",

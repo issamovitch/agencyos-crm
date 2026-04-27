@@ -190,7 +190,7 @@ export function NewOpportunityForm({
                   <FormControl>
                     <Input
                       disabled={isLoading}
-                      placeholder="New SaasHQ functionality"
+                      placeholder="New AgencyOS functionality"
                       {...field}
                     />
                   </FormControl>
@@ -248,7 +248,7 @@ export function NewOpportunityForm({
                   <FormControl>
                     <Textarea
                       disabled={isLoading}
-                      placeholder="New SaasHQ functionality"
+                      placeholder="New AgencyOS functionality"
                       {...field}
                     />
                   </FormControl>

@@ -1,7 +1,7 @@
 {
   "RootLayout": {
-    "title": "SaasHQ",
-    "description": "SaasHQ is an open source CRM build on top of NextJS."
+    "title": "AgencyOS",
+    "description": "AgencyOS is an open source CRM build on top of NextJS."
   },
   "ModuleMenu": {
     "dashboard": "डैशबोर्ड",

@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
-import { Loader2 } from 'lucide-react';
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
@@ -54,7 +53,10 @@ const LoadingButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {loading && (
-          <Loader2 className={cn('h-4 w-4 animate-spin', children && 'mr-2')} />
+          <div
+            className={cn("h-4 w-4 animate-spin rounded-full border-2 border-solid border-t-transparent", children && 'mr-2')}
+            style={{ borderColor: 'currentColor', borderTopColor: 'transparent' }}
+          />
         )}
         {children}
       </Comp>

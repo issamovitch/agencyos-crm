@@ -4,7 +4,6 @@ import { useCompletion } from 'ai/react';
 
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
-import { Loader } from 'lucide-react';
 
 export default function AiHelpCenter() {
   const {
@@ -47,7 +46,14 @@ export default function AiHelpCenter() {
                 Stop
               </Button>
               <Button type="submit" disabled={isLoading}>
-                {isLoading ? <Loader className="animate-spin" /> : 'Submit'}
+                {isLoading ? (
+                  <div
+                    className="h-4 w-4 animate-spin rounded-full border-2 border-solid border-t-transparent"
+                    style={{ borderColor: 'currentColor', borderTopColor: 'transparent' }}
+                  />
+                ) : (
+                  'Submit'
+                )}
               </Button>
             </div>
           </div>

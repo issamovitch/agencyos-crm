@@ -1,7 +1,6 @@
 'use client';
 
 import { toast } from 'sonner';
-import { Loader2 } from 'lucide-react';
 import type { ElementRef } from 'react';
 import React, { useRef } from 'react';
 
@@ -63,7 +62,10 @@ const SendMailToAll = () => {
               />
               <FormSubmit className="w-full">
                 {isLoading ? (
-                  <Loader2 className="h-6 w-6 animate-spin" />
+                  <div
+                    className="h-6 w-6 animate-spin rounded-full border-2 border-solid border-t-transparent"
+                    style={{ borderColor: 'currentColor', borderTopColor: 'transparent' }}
+                  />
                 ) : (
                   'Send mail'
                 )}

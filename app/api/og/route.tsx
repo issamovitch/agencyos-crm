@@ -17,13 +17,13 @@ export async function GET(request: Request) {
     const hasTitle = searchParams.has('title');
     const title = hasTitle
       ? searchParams.get('title')?.slice(0, 200)
-      : 'SaasHQ';
+      : 'AgencyOS';
 
     const hasDescription = searchParams.has('description');
 
     const description = hasDescription
       ? searchParams.get('description')?.slice(0, 200)
-      : 'SaasHQ is an open source CRM/ERP starter built on top of NextJS. Technology stack: NextJS with Typescrtipt, Postgresql, TailwindCSS, React, Prisma, shadCN, resend.com, react.email and more. ';
+      : 'AgencyOS is an open source CRM/ERP starter built on top of NextJS. Technology stack: NextJS with Typescrtipt, Postgresql, TailwindCSS, React, Prisma, shadCN, resend.com, react.email and more. ';
 
     return new ImageResponse(
       (

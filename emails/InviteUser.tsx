@@ -34,8 +34,8 @@ export const InviteUserEmail = ({
 }: VercelInviteUserEmailProps) => {
   const previewText =
     userLanguage === 'en'
-      ? `You have been invited by ${invitedByUsername} to SaasHQ app`
-      : `Sie wurden von einem Benutzer eingeladen ${invitedByUsername} zur Bewerbung SaasHQ`;
+      ? `You have been invited by ${invitedByUsername} to AgencyOS app`
+      : `Sie wurden von einem Benutzer eingeladen ${invitedByUsername} zur Bewerbung AgencyOS`;
 
   return (
     <Html>

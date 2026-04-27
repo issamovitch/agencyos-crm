@@ -15,6 +15,7 @@ import { LogOut, Settings } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import useAvatarStore from '@/store/useAvatarStore';
+import Link from 'next/link';
 
 type Props = {
   avatar: string;
@@ -51,21 +52,29 @@ const AvatarDropdown = ({ avatar, userId, name, email }: Props) => {
           />
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent id="avatar-dropdown">
         <DropdownMenuLabel className="space-y-1">
           <div>{name}</div>
           <div className="text-xs text-gray-500">{email}</div>
         </DropdownMenuLabel>
 
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => router.push('/projects/dashboard')}>
+        <Link
+          role="menuitem"
+          className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+          href="/projects/dashboard"
+        >
           Todo dashboard
-        </DropdownMenuItem>
+        </Link>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => router.push('/profile')}>
+        <Link
+          role="menuitem"
+          className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+          href="/profile"
+        >
           <Settings className="mr-2 inline-block h-4 w-4 stroke-current text-gray-500" />
           <span>Profile settings</span>
-        </DropdownMenuItem>
+        </Link>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
           <LogOut className="mr-2 inline-block h-4 w-4 stroke-current text-gray-500" />

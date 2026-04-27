@@ -28,7 +28,7 @@ const AdminPage = async () => {
   return (
     <Container
       title="Administration"
-      description={'Here you can setup your SaasHQ instance'}
+      description={'Here you can setup your AgencyOS instance'}
     >
       <div className="space-x-2">
         <Button asChild>

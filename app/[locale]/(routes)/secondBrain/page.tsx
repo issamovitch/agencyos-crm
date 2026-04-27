@@ -41,7 +41,7 @@ const SecondBrainPage = async () => {
             </Link>
           </ol>
           <ol>
-            3. Create SaasHQ integration in Notion (
+            3. Create AgencyOS integration in Notion (
             <a href="https://www.notion.so/my-integrations">
               https://www.notion.so/my-integrations
             </a>

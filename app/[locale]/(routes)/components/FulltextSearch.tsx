@@ -18,7 +18,7 @@ const FulltextSearch = () => {
   };
 
   return (
-    <div className="flex w-full items-center space-x-4">
+    <div className="flex w-3/4 items-center space-x-4">
       <Button
         variant="ghost"
         size="icon"

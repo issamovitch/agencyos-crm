@@ -22,7 +22,7 @@ const ProjectDashboard = async () => {
     <Container
       title="Dashboard"
       description={
-        'Welcome to SaasHQ cockpit, here you can see your company overview'
+        'Welcome to AgencyOS cockpit, here you can see your company overview'
       }
     >
       <ProjectDashboardCockpit
