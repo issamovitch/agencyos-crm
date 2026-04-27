@@ -40,6 +40,11 @@ import { getOpportunitiesCount } from '@/actions/dashboard/get-opportunities-cou
 import { getExpectedRevenue } from '@/actions/crm/opportunity/get-expected-revenue';
 import { getEmployeeCount } from '@/actions/dashboard/get-employee-count';
 import { getWorkflowCount } from '@/actions/dashboard/get-workflow-count';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
 
 const DashboardPage = async () => {
   const session = await getServerSession(authOptions);

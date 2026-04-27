@@ -281,7 +281,7 @@ const NewTaskForm = ({ account, onFinish }: NewTaskFormProps) => {
               </div>
               <div className="flex w-full justify-end space-x-2 pt-2">
                 <SheetTrigger asChild>
-                  <Button variant={'destructive'}>Close</Button>
+                  <Button variant={'gray'}>Close</Button>
                 </SheetTrigger>
                 <Button type="submit">Create</Button>
               </div>

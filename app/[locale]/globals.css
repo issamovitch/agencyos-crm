@@ -60,7 +60,7 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 6 86% 49%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -93,7 +93,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
 
-    --primary: 210 40% 98%;
+    --primary: 6 86% 49%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -120,4 +120,22 @@
 
 .SelectTrigger[data-placeholder] {
   @apply text-slate-500;
+}
+
+html.light #wrapper-container {
+  background-color: #F7F8F9 !important;
+}
+
+html.light #wrapper-header {
+   background-color: #ffffff !important;
+  box-shadow: 4px 0 6px -1px rgb(0 0 0 / 0.1), 2px 0 4px -2px rgb(0 0 0 / 0.1);
+}
+
+#wrapper-sidebar {
+  box-shadow: 4px 0 6px -1px rgb(0 0 0 / 0.1), 2px 0 4px -2px rgb(0 0 0 / 0.1);
+  z-index: 10;
+}
+
+#sidebar-logo {
+  max-width: inherit !important;
 }

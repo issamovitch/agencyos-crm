@@ -9,7 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import RightViewModal from '@/components/modals/right-view-modal';
 
 import { columns } from '../table-components/columns';
@@ -50,7 +49,6 @@ const EmployeesView = ({ data, crmData }: any) => {
             </RightViewModal>
           </div>
         </div>
-        <Separator />
       </CardHeader>
 
       <CardContent>

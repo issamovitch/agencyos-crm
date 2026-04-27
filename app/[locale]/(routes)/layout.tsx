@@ -5,8 +5,6 @@ import { redirect } from 'next/navigation';
 
 import Header from './components/Header';
 import SideBar from './components/SideBar';
-import Footer from './components/Footer';
-import getAllCommits from '@/actions/github/get-repo-commits';
 import type { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader'
 
@@ -14,7 +12,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL! || 'http://localhost:3000'
   ),
-  title: '',
   description: '',
   openGraph: {
     images: [
@@ -61,14 +58,12 @@ export default async function AppLayout({
     return redirect('/inactive');
   }
 
-  const build = await getAllCommits();
-
   //console.log(typeof build, "build");
   return (
     <div className="flex h-screen overflow-hidden">
       <NextTopLoader color="#e41f07" height={8} />
-      <SideBar build={build} />
-      <div className="flex h-full w-full flex-col overflow-hidden">
+      <SideBar />
+      <div id="wrapper-container" className="flex h-full w-full flex-col overflow-hidden">
         <Header
           id={session.user.id as string}
           name={session.user.name as string}
@@ -76,8 +71,7 @@ export default async function AppLayout({
           avatar={session.user.image as string}
           lang={session.user.userLanguage as string}
         />
-        <div className="h-full flex-grow overflow-y-auto p-5">{children}</div>
-        <Footer />
+        <div className="h-full flex-grow overflow-y-auto">{children}</div>
       </div>
     </div>
   );

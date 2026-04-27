@@ -325,7 +325,7 @@ export function LoginComponent() {
                 </div>
               )}
               <DialogTrigger className="w-full pt-5 text-right">
-                <Button variant={'destructive'}>Cancel</Button>
+                <Button variant={'gray'}>Cancel</Button>
               </DialogTrigger>
             </DialogContent>
           </Dialog>

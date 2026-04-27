@@ -5,8 +5,6 @@ import { GithubIcon, Star } from 'lucide-react';
 
 import '@/app/[locale]/globals.css';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import Footer from '@/app/[locale]/(routes)/components/Footer';
-import getGithubRepoStars from '@/actions/github/get-repo-stars';
 import { DiscordLogoIcon } from '@radix-ui/react-icons';
 
 type Props = {
@@ -27,14 +25,16 @@ export async function generateMetadata({ params: { locale } }: Props) {
   const messages = await getLocales(locale);
   const t = createTranslator({ locale, messages });
   return {
-    title: t('RootLayout.title'),
+    title: {
+      default: 'AgencyOS',
+      template: `%s | AgencyOS`,
+    },
     description: t('RootLayout.description'),
   };
 }
 
 const AuthLayout = async ({ children }: { children: React.ReactNode }) => {
-  //Get github stars from github api
-  const githubStars = await getGithubRepoStars();
+
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">
@@ -46,11 +46,6 @@ const AuthLayout = async ({ children }: { children: React.ReactNode }) => {
           <GithubIcon className="h-5 w-5" />
         </Link>
         <div className="flex items-center rounded-md border p-2">
-          <span className="sr-only">Github stars</span>
-          {githubStars}
-          <Star className="h-4 w-4" />
-        </div>
-        <div className="flex items-center rounded-md border p-2">
           <Link href="https://discord.gg/kBhAUKBMgf">
             <DiscordLogoIcon className="h-5 w-5" />
           </Link>
@@ -58,7 +53,6 @@ const AuthLayout = async ({ children }: { children: React.ReactNode }) => {
         <ThemeToggle />
       </div>
       <div className="flex h-full items-center overflow-hidden">{children}</div>
-      <Footer />
     </div>
   );
 };

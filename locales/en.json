@@ -6,7 +6,7 @@
   "ModuleMenu": {
     "dashboard": "Dashboard",
     "crm": {
-      "title": "Sales",
+      "title": "Overview",
       "accounts": "Companies",
       "opportunities": "Opportunities",
       "contacts": "Contacts",

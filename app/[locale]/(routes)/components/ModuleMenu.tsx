@@ -12,23 +12,26 @@ import ChatGPTModuleMenu from './menu-items/ChatGPT';
 import EmployeesModuleMenu from './menu-items/Employees';
 import WorkflowsModuleMenu from './menu-items/Workflows';
 import DataboxModuleMenu from './menu-items/Databoxes';
-import CrmModuleMenu from './menu-items/Crm';
+import CrmOverviewMenu from './menu-items/CrmOverview';
+import CrmAccountsMenu from './menu-items/CrmAccounts';
+import CrmContactsMenu from './menu-items/CrmContacts';
+import CrmLeadsMenu from './menu-items/CrmLeads';
+import CrmOpportunitiesMenu from './menu-items/CrmOpportunities';
 
 import AdministrationMenu from './menu-items/Administration';
 import DashboardMenu from './menu-items/Dashboard';
 import EmailsModuleMenu from './menu-items/Emails';
-import { cn } from '@/lib/utils';
+import { useSidebarStore } from '@/store/use-sidebar-store';
 import type { system_Modules_Enabled } from '@prisma/client';
 import type { getDictionary } from '@/dictionaries';
 
 type Props = {
   modules: system_Modules_Enabled[];
   dict: Awaited<ReturnType<typeof getDictionary>>;
-  build: number;
 };
 
-const ModuleMenu: FC<Props> = ({ modules, dict, build }) => {
-  const [open, setOpen] = useState(true);
+const ModuleMenu: FC<Props> = ({ modules, dict }) => {
+  const { isOpen: open, toggle: toggleOpen } = useSidebarStore();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -40,24 +43,24 @@ const ModuleMenu: FC<Props> = ({ modules, dict, build }) => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div id="wrapper-sidebar" className="flex flex-col">
       <div
         className={` ${
           open ? 'w-72' : 'w-20'
         } relative h-screen p-5 pt-8 duration-300`}
       >
-        <div className="flex items-center gap-x-4">
+        <div className="flex items-center">
           <div
-            className={`cursor-pointer rounded-full border px-4 py-2 duration-500 ${
-              open && 'rotate-[360deg]'
-            }`}
-            onClick={() => setOpen(!open)}
+            className={`flex items-center justify-center cursor-pointer rounded-full border duration-500 ${
+              open ? 'p-2' : 'p-1'
+            } ${open && 'rotate-[360deg]'}`}
+            onClick={toggleOpen}
           >
-            HQ
+            <img src="/logo.png" alt="Logo" id="sidebar-logo" className={open ? 'h-10 w-10' : 'h-7 w-7'} />
           </div>
 
           <h1
-            className={`origin-left text-xl font-medium duration-200 ${
+            className={`ml-4 origin-left text-xl font-medium duration-200 ${
               !open && 'scale-0'
             }`}
           >
@@ -69,7 +72,22 @@ const ModuleMenu: FC<Props> = ({ modules, dict, build }) => {
           {modules.find(
             (menuItem) => menuItem.name === 'crm' && menuItem.enabled
           ) ? (
-            <CrmModuleMenu open={open} localizations={dict.ModuleMenu.crm} />
+            <>
+              <CrmOverviewMenu open={open} title={dict.ModuleMenu.crm.title} />
+              <CrmAccountsMenu
+                open={open}
+                title={dict.ModuleMenu.crm.accounts}
+              />
+              <CrmContactsMenu
+                open={open}
+                title={dict.ModuleMenu.crm.contacts}
+              />
+              <CrmLeadsMenu open={open} title={dict.ModuleMenu.crm.leads} />
+              <CrmOpportunitiesMenu
+                open={open}
+                title={dict.ModuleMenu.crm.opportunities}
+              />
+            </>
           ) : null}
           {modules.find(
             (menuItem) => menuItem.name === 'projects' && menuItem.enabled
@@ -131,15 +149,7 @@ const ModuleMenu: FC<Props> = ({ modules, dict, build }) => {
           <AdministrationMenu open={open} title={dict.ModuleMenu.settings} />
         </div>
       </div>
-      <div
-        className={cn('flex w-full items-center justify-center', {
-          hidden: !open,
-        })}
-      >
-        <span className="pb-2 text-xs text-gray-500">
-          build: 0.0.3-beta-{build}
-        </span>
-      </div>
+
     </div>
   );
 };

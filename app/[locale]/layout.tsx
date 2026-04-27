@@ -34,7 +34,10 @@ export async function generateMetadata({ params: { locale } }: Props) {
 
   return {
     metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-    title: t('RootLayout.title'),
+    title: {
+      default: 'AgencyOS',
+      template: `%s | AgencyOS`,
+    },
     description: t('RootLayout.description'),
     icons: {
       icon: '/logo.png',
@@ -95,7 +98,7 @@ export default async function RootLayout({
       </head>
       <body className={inter.className + 'h-screen overflow-hidden'}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider attribute="class" defaultTheme="light">
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>

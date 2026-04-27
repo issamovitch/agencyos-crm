@@ -90,7 +90,7 @@ const DeleteProjectDialog = ({ boardId, boardName }: Props) => {
         <DialogFooter className="space-x-2">
           <Button
             className="px-2"
-            variant="default"
+            variant="gray"
             onClick={() => setOpen(false)}
           >
             Cancel

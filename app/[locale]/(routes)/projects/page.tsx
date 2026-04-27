@@ -1,5 +1,10 @@
 import React, { Suspense } from 'react';
+import type { Metadata } from 'next';
 import Container from '../components/ui/Container';
+
+export const metadata: Metadata = {
+  title: 'Projects',
+};
 
 import type { Session } from 'next-auth';
 import { getServerSession } from 'next-auth';

@@ -326,7 +326,7 @@ const Kanban = (props: any) => {
             />
             <div className="flex w-full justify-end pt-2">
               <SheetTrigger asChild>
-                <Button variant={'destructive'}>Close</Button>
+                <Button variant={'gray'}>Close</Button>
               </SheetTrigger>
             </div>
           </SheetContent>

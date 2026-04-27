@@ -242,7 +242,7 @@ const NewTaskDialog = ({ users, boards }: Props) => {
                 </div>
                 <div className="flex w-full justify-end space-x-2 pt-2">
                   <DialogTrigger asChild>
-                    <Button variant={'destructive'}>Cancel</Button>
+                    <Button variant={'gray'}>Cancel</Button>
                   </DialogTrigger>
                   <Button type="submit">Create</Button>
                 </div>

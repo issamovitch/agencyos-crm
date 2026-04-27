@@ -6,7 +6,7 @@ import { authOptions } from '@/lib/auth';
 import { getDictionary } from '@/dictionaries';
 import type { FC } from 'react';
 
-const SideBar: FC<{ build: number }> = async ({ build }) => {
+const SideBar = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session) return null;
@@ -23,6 +23,6 @@ const SideBar: FC<{ build: number }> = async ({ build }) => {
 
   if (!dict) return null;
 
-  return <ModuleMenu modules={modules} dict={dict} build={build} />;
+  return <ModuleMenu modules={modules} dict={dict} />;
 };
 export default SideBar;

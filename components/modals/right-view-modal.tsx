@@ -78,7 +78,7 @@ const RightViewModal = ({
             <div className="flex w-full justify-end p-3">
               {' '}
               <Dialog.Close asChild>
-                <Button variant={'destructive'} onClick={() => setOpen(false)}>
+                <Button variant={'gray'} onClick={() => setOpen(false)}>
                   Close
                 </Button>
               </Dialog.Close>
