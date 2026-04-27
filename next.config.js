@@ -19,6 +19,9 @@ const nextConfig = {
     config.module.noParse = [require.resolve('typescript/lib/typescript.js')];
     return config;
   },
+  devIndicators: {
+    buildActivity: true,
+  },
 };
 
 module.exports = withNextIntl(nextConfig);

@@ -3,7 +3,7 @@ import React from 'react';
 
 interface ContainerProps {
   title: string;
-  description: string;
+  description?: string;
   visibility?: string;
   children: React.ReactNode;
 }

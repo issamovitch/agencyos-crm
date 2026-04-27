@@ -6,6 +6,11 @@ import { Suspense } from 'react';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'OpenAI',
+};
 
 const ProfilePage = async () => {
   const user = await getServerSession(authOptions);

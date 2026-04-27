@@ -154,7 +154,7 @@ export function DataTableRowActions<TData>({
               href={
                 invoice.rossum_annotation_json_url
                   ? invoice.rossum_annotation_json_url
-                  : '/invoice'
+                  : '/invoices'
               }
             >
               Download json from Rossum

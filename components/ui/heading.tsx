@@ -2,7 +2,7 @@ import { Lock } from 'lucide-react';
 
 interface HeadingProps {
   title: string;
-  description: string;
+  description?: string;
   visibility?: string;
 }
 
@@ -12,7 +12,7 @@ const Heading = ({ title, description, visibility }: HeadingProps) => (
       {title}
       {visibility === 'private' ? <Lock /> : ''}
     </h2>
-    <p className="py-5 text-sm text-muted-foreground">{description}</p>
+    { description && <p className="py-5 text-sm text-muted-foreground">{description}</p>}
   </div>
 );
 

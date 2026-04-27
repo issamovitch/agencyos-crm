@@ -147,14 +147,13 @@ export default function SidebarClient({ modules, dict }: Props) {
 
           {has('projects')    && <NavItem href="/projects"     icon={FolderKanban}  label={d.projects}   open={open} match="/projects" />}
           {has('emails')      && <NavItem href="/emails"       icon={Mail}          label={d.emails}     open={open} match="/emails" />}
-          {has('secondBrain') && <NavItem href="/second-brain" icon={Brain}         label="Second brain" open={open} match="/second-brain" />}
           {has('employee')    && <NavItem href="/employees"    icon={Users}         label="Employees"    open={open} match="/employees" />}
           {has('invoice')     && <NavItem href="/invoices"     icon={FileText}      label={d.invoices}   open={open} match="/invoices" />}
           {has('workflows')   && <NavItem href="/workflows"    icon={GitBranch}     label={d.workflows}  open={open} match="/workflows" />}
           {has('reports')     && <NavItem href="/reports"      icon={FileBarChart}  label={d.reports}    open={open} match="/reports" />}
           {has('documents')   && <NavItem href="/documents"    icon={BookOpen}      label={d.documents}  open={open} match="/documents" />}
           {has('databox')     && <NavItem href="/databox"      icon={Database}      label="Databox"      open={open} match="/databox" />}
-          {has('openai')      && <NavItem href="/chat"         icon={MessageSquare} label="AI Chat"      open={open} match="/chat" />}
+          {has('openai')      && <NavItem href="/openAi"         icon={MessageSquare} label="AI Chat"      open={open} match="/openAi" />}
 
           <NavItem href="/admin" icon={Settings} label={d.settings} open={open} match="/admin" />
         </div>

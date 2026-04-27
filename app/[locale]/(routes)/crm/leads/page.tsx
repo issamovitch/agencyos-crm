@@ -7,6 +7,11 @@ import LeadsView from '../components/LeadsView';
 
 import { getAllCrmData } from '@/actions/crm/get-crm-data';
 import { getLeads } from '@/actions/crm/get-leads';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Leads',
+};
 
 const LeadsPage = async () => {
   const crmData = await getAllCrmData();

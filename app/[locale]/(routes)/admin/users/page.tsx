@@ -10,6 +10,11 @@ import { AdminUserDataTable } from './table-components/data-table';
 import { columns } from './table-components/columns';
 import type { Users } from '@prisma/client';
 import SendMailToAll from './components/send-mail-to-all';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Users Administration',
+};
 
 const AdminUsersPage = async () => {
   const users: Users[] = await getUsers();

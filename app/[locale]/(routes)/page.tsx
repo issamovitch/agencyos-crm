@@ -85,9 +85,6 @@ const DashboardPage = async () => {
   const documentsModule = modules.find((module) => module.name === 'documents');
   const employeesModule = modules.find((module) => module.name === 'employee');
   const workflowsModule = modules.find((module) => module.name === 'workflows');
-  const secondBrainModule = modules.find(
-    (module) => module.name === 'secondBrain'
-  );
 
   return (
     <Container
@@ -213,7 +210,7 @@ const DashboardPage = async () => {
         )}
         {invoiceModule?.enabled && (
           <DashboardCard
-            href="/invoice"
+            href="/invoices"
             title={dict.DashboardPage.invoices}
             IconComponent={CoinsIcon}
             content={invoices}
@@ -230,11 +227,6 @@ const DashboardPage = async () => {
 
         <StorageQuota actual={storage} title={dict.DashboardPage.storage} />
 
-        {secondBrainModule?.enabled && (
-          <Suspense fallback={<LoadingBox />}>
-            <NotionsBox />
-          </Suspense>
-        )}
       </div>
     </Container>
   );

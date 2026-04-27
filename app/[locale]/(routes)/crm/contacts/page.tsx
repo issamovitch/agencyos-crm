@@ -6,6 +6,11 @@ import Container from '../../components/ui/Container';
 import ContactsView from '../components/ContactsView';
 import { getContacts } from '@/actions/crm/get-contacts';
 import { getAllCrmData } from '@/actions/crm/get-crm-data';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contacts',
+};
 
 const ContactsPage = async () => {
   const crmData = await getAllCrmData();

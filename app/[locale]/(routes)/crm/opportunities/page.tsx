@@ -6,8 +6,13 @@ import Container from '../../components/ui/Container';
 import OpportunitiesView from '../components/OpportunitiesView';
 import { getAllCrmData } from '@/actions/crm/get-crm-data';
 import { getOpportunitiesFull } from '@/actions/crm/get-opportunities-with-includes';
+import type { Metadata } from 'next';
 
-const AccountsPage = async () => {
+export const metadata: Metadata = {
+  title: 'Opportunities',
+};
+
+const OpportunitiesPage = async () => {
   const crmData = await getAllCrmData();
   const opportunities = await getOpportunitiesFull();
 
@@ -23,4 +28,4 @@ const AccountsPage = async () => {
   );
 };
 
-export default AccountsPage;
+export default OpportunitiesPage;

@@ -5,8 +5,14 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import type { Session } from 'next-auth';
+import type { Metadata } from 'next';
 
 import WorkflowListView from './components/WorkflowListView';
+
+export const metadata: Metadata = {
+  title: 'Workflows',
+};
+
 import SuspenseLoading from '@/components/loadings/suspense';
 
 import { getDefinitionList } from '@/actions/workflows/get-definition-list';

@@ -1171,19 +1171,8 @@ CREATE TABLE public."openAi_keys" (
 
 ALTER TABLE public."openAi_keys" OWNER TO postgres;
 
---
--- Name: secondBrain_notions; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public."secondBrain_notions" (
-    id text NOT NULL,
-    "user" text NOT NULL,
-    notion_api_key text NOT NULL,
-    notion_db_id text NOT NULL
-);
 
 
-ALTER TABLE public."secondBrain_notions" OWNER TO postgres;
 
 --
 -- Name: systemServices; Type: TABLE; Schema: public; Owner: postgres
@@ -1624,13 +1613,6 @@ COPY public."openAi_keys" (id, "user", organization_id, api_key) FROM stdin;
 \.
 
 
---
--- Data for Name: secondBrain_notions; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public."secondBrain_notions" (id, "user", notion_api_key, notion_db_id) FROM stdin;
-\.
-
 
 --
 -- Data for Name: systemServices; Type: TABLE DATA; Schema: public; Owner: postgres
@@ -1647,7 +1629,6 @@ COPY public."systemServices" (id, name, "serviceUrl", "serviceId", "serviceKey",
 COPY public."system_Modules_Enabled" (id, name, enabled, "position") FROM stdin;
 clr6yxdvr000026aglzz0lz1a	crm	t	1
 clr6yxdvs000126agadmbrbty	projects	t	2
-clr6yxdvs000326agegtpo2pj	secondBrain	t	4
 clr6yxdvs000526agjcx1li5h	invoice	t	6
 clr6yxdvs000226agut4m4ut9	emails	t	3
 clr6yxdvs000426ag66brka2z	employee	t	5
@@ -1955,12 +1936,6 @@ ALTER TABLE ONLY public."openAi_keys"
     ADD CONSTRAINT "openAi_keys_pkey" PRIMARY KEY (id);
 
 
---
--- Name: secondBrain_notions secondBrain_notions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."secondBrain_notions"
-    ADD CONSTRAINT "secondBrain_notions_pkey" PRIMARY KEY (id);
 
 
 --
@@ -2643,13 +2618,6 @@ ALTER TABLE ONLY public."crm_Opportunities"
 ALTER TABLE ONLY public."openAi_keys"
     ADD CONSTRAINT "openAi_keys_user_fkey" FOREIGN KEY ("user") REFERENCES public."Users"(id) ON UPDATE CASCADE ON DELETE RESTRICT;
 
-
---
--- Name: secondBrain_notions secondBrain_notions_user_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."secondBrain_notions"
-    ADD CONSTRAINT "secondBrain_notions_user_fkey" FOREIGN KEY ("user") REFERENCES public."Users"(id) ON UPDATE CASCADE ON DELETE RESTRICT;
 
 
 --

@@ -4,6 +4,11 @@ import { DocumentsDataTable } from './components/data-table';
 import { columns } from './components/columns';
 import ModalDropzone from './components/modal-dropzone';
 import type { Documents } from '@prisma/client';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Documents',
+};
 
 const DocumentsPage = async () => {
   const documents: Documents[] = await getDocuments();

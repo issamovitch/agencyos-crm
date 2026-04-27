@@ -539,7 +539,6 @@ model Users {
   assigned_opportunity crm_Opportunities[]   @relation(name: "assigned_to_user_relation")
   assigned_contacts    crm_Contacts[]        @relation(name: "assigned_contacts")
   created_contacts     crm_Contacts[]        @relation(name: "created_contacts")
-  notion_account       secondBrain_notions[]
   openAi_key           openAi_keys[]
   assigned_invoices    Invoices[]
   boards               Boards[]              @relation(name: "assigned_user")
@@ -568,13 +567,6 @@ model system_Modules_Enabled {
   position Int
 }
 
-model secondBrain_notions {
-  id             String @id @default(cuid())
-  user           String
-  notion_api_key String
-  notion_db_id   String
-  assigned_user  Users? @relation(fields: [user], references: [id])
-}
 
 model openAi_keys {
   id              String @id @default(cuid())

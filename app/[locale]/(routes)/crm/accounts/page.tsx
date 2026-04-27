@@ -5,6 +5,11 @@ import Container from '../../components/ui/Container';
 import SuspenseLoading from '@/components/loadings/suspense';
 import { getAllCrmData } from '@/actions/crm/get-crm-data';
 import { getAccounts } from '@/actions/crm/get-accounts';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Accounts',
+};
 
 const AccountsPage = async () => {
   const crmData = await getAllCrmData();
@@ -13,7 +18,6 @@ const AccountsPage = async () => {
   return (
     <Container
       title="Accounts"
-      description={'Everything you need to know about your accounts'}
     >
       <Suspense fallback={<SuspenseLoading />}>
         <AccountsView crmData={crmData} data={accounts} />

@@ -7,6 +7,11 @@ import EmployeesView from './components/EmployeesView';
 
 import { getAllCrmData } from '@/actions/crm/get-crm-data';
 import { getEmployee } from '@/actions/get-employee';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Employees',
+};
 
 const EmployeePage = async () => {
   const crmData = await getAllCrmData();

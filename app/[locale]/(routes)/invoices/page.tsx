@@ -19,6 +19,11 @@ import type { MyAccount } from '@prisma/client';
 import { getActiveUsers } from '@/actions/get-users';
 import { getBoards } from '@/actions/projects/get-boards';
 import NewTaskDialog from './dialogs/NewTask';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Invoices',
+};
 
 const InvoicePage = async () => {
   const session = await getServerSession(authOptions);
@@ -37,7 +42,7 @@ const InvoicePage = async () => {
         <div className="flex space-x-2">
           <ModalDropzone buttonLabel="Upload pdf" />
           <Button asChild>
-            <Link href={`/invoice/${session?.user.id}`}>My invoices</Link>
+            <Link href={`/invoices/${session?.user.id}`}>My invoices</Link>
           </Button>
         </div>
         <div>

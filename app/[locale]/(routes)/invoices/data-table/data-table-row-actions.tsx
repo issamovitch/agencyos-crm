@@ -210,7 +210,7 @@ export function DataTableRowActions<TData>({
               </DropdownMenuItem>
 
               <DropdownMenuItem
-                onClick={() => router.push(`/invoice/detail/${invoice.id}`)}
+                onClick={() => router.push(`/invoices/detail/${invoice.id}`)}
               >
                 Invoice detail
               </DropdownMenuItem>
@@ -224,7 +224,7 @@ export function DataTableRowActions<TData>({
                 onClick={() => {
                   setIsOpen(true);
                   setNotionUrl(
-                    `${process.env.NEXT_PUBLIC_APP_URL}/invoice/detail/${invoice.id}`
+                    `${process.env.NEXT_PUBLIC_APP_URL}/invoices/detail/${invoice.id}`
                   );
                 }}
               >
@@ -266,7 +266,7 @@ export function DataTableRowActions<TData>({
                   router.push(
                     invoice.rossum_annotation_json_url
                       ? invoice.rossum_annotation_json_url
-                      : '/invoice'
+                      : '/invoices'
                   )
                 }
               >
@@ -275,7 +275,7 @@ export function DataTableRowActions<TData>({
               <DropdownMenuItem
                 onClick={() =>
                   router.push(
-                    invoice.money_s3_url ? invoice.money_s3_url : '/invoice'
+                    invoice.money_s3_url ? invoice.money_s3_url : '/invoices'
                   )
                 }
               >
@@ -305,7 +305,7 @@ export function DataTableRowActions<TData>({
                   <DropdownMenuItem>Rossum annotation JSON</DropdownMenuItem>
                   <DropdownMenuSubContent>
                     <Link
-                      href={`/invoice/annotation/${invoice.rossum_annotation_id}`}
+                      href={`/invoices/annotation/${invoice.rossum_annotation_id}`}
                       target="_blank"
                     >
                       <DropdownMenuItem>Show annotation</DropdownMenuItem>

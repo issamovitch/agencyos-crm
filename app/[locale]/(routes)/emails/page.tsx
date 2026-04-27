@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { MailComponent } from './components/mail';
 import { accounts, mails } from '@/app/[locale]/(routes)/emails/data';
@@ -7,6 +8,10 @@ import SuspenseLoading from '@/components/loadings/suspense';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { getDictionary } from '@/dictionaries';
+
+export const metadata: Metadata = {
+  title: 'Emails',
+};
 
 const EmailRoute = async () => {
   const session = await getServerSession(authOptions);
